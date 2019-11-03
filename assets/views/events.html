@@ -1,0 +1,23 @@
+<div ng-init="init()"> 
+    <div ng-hide="loading" class="row medium-12 large-10 columns">
+        <div class="blog-post">
+            <div class="row small-up-1 medium-up-2">
+                <div class="column column-block" ng-repeat="event in events | orderBy: 'startDate' : true">
+                    <div class="card">
+                        <div class="card-section color-lb">
+                            <p><a class="bold" ng-href="event/{{event.id}}" ng-bind="event.title"></a></p>
+                            <p><a ng-href="event/{{event.id}}" ng-bind="event.subtitle"></a></p>
+                        </div>
+                        <a ng-href="event/{{event.id}}"><img ng-src="{{'/angularjs'+event.image}}" alt="{{event.title}}"></a>
+                        <div class="card-section">
+                            <p><span ng-bind="event.startDate | date:'dd/MM/yyyy'"></span> - <span
+                                    ng-bind="event.endDate | date:'dd/MM/yyyy'"></span></p>
+                            <div class="hide-for-small-only" ng-bind-html="html(event.description)"></div>
+                        </div>
+                        <a ng-href="event/{{event.id}}" class="button expanded">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

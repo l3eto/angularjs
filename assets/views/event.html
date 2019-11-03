@@ -1,0 +1,37 @@
+<div ng-init="init()">
+    <div ng-hide="loading" class="row medium-12 large-10 columns">
+        <div class="blog-post">
+            <div class="text-right">
+                <a href="events">Volver</a>
+            </div>
+            <div ng-hide="event != null">
+                <p>EVENT INFO NOT FOUND</p>
+            </div>
+            <div ng-show="event != null">
+                <div class="row small-up-1 medium-up-2">
+                    <div class="column column-block">
+                        <div class="callout">
+                            <div ng-repeat="session in sessions | orderBy : 'date' : false">
+                                <p>Fecha <span ng-bind="session.date | date:'dd/MM/yyyy'"></span>, Disponibilidad <span ng-bind="session.availability"></span>
+                                    <span class="float-right"><button ng-click="removeTicket(id, session)" class="color-lb icon-action"> - </button> <span>{{getNumTicket(id, session)}}</span> <button class="color-lb icon-action" ng-click="addTicket(id, session)"> + </button></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column column-block">
+                        <div ng-repeat="(key, value) in tickets | groupBy: 'event.id'">
+                            <div><p class="lead">{{value[0].event.title}}</p></div>
+                            <div ng-repeat="ticket in value">
+                                <span ng-bind="ticket.session.date | date:'dd/MM/yyyy'"></span>
+                                <div class="float-right">
+                                    <span ng-bind="'x'+ticket.num"></span>
+                                    <trash data="ticket" action="trashTicket(ticket)"></trash>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

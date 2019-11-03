@@ -1,0 +1,43 @@
+<html ng-app="app" ng-controller="appController">
+
+  <head>
+
+    <title>{{title}}</title>
+
+    <!-- BASE PATH ANGULARJS -->
+    <base href="/angularjs/">
+
+    <!-- LIBS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation-float.min.css">
+    <link rel="stylesheet" href="/angularjs/assets/css/app.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.17/angular-filter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.23/angular-ui-router.min.js"></script>  
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="callout primary shadown-bottom">
+        <article class="grid-container text-center">
+          <div>
+            <span class="lead">HEADER</span>
+          </div>
+        </article>
+      </div>
+    </header>
+    
+    <ui-view></ui-view>
+
+    <!-- ANGULARJS -->
+    <script src="/angularjs/assets/js/app.js"></script>
+    <script src="/angularjs/assets/js/routes.js"></script>
+    <script src="/angularjs/assets/js/services.js"></script>
+    <script src="/angularjs/assets/js/components.js"></script>
+    <script src="/angularjs/assets/js/controllers.js"></script>
+
+  </body>
+
+</html>

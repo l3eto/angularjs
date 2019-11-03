@@ -1,0 +1,22 @@
+.no-padding {
+    padding: 0px!important;
+}
+.bold {
+    font-weight: bold!important;
+}
+.color-lb {
+    color: #1779ba!important;
+}
+.icon-action {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.card {
+    border: 1px solid #2199e8!important;
+}
+.shadown-bottom {
+    -webkit-box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.6)!important;
+    -moz-box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.6)!important;
+    box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.6)!important;
+}
+.w15px {width: 15px;}

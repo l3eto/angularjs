@@ -27,9 +27,15 @@ app
     };
     return {
         getList: function(){
-        return $http.get(events.all).then(function(res){
+        /*return $http.get(events.all).then(function(res){
             return res.data;
-        });
+        });*/
+            console.log('https://swapi.co/api/starships/');
+            var config = {headers: {'Authorization': 'none'}};
+            return $http.get('https://swapi.co/api/starships/', config).then(function(res){
+                console.log(res);
+                return [];
+            });
         },
         getDetails: function (id) {
             return $http.get(events['info'+id]).then(function (res) {
